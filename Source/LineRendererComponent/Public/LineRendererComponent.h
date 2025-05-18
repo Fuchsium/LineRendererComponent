@@ -58,7 +58,7 @@ protected:
 	//~ End UMeshComponent Interface.
 
 protected:
-    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Components|LineRenderer")
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Rendering")
 	UMaterialInterface* LineMaterial;
 
 private: 
