@@ -298,14 +298,14 @@ void FLineRendererComponentSceneProxy::GetDynamicMeshElements(const TArray<const
                         FVector4 StartClip = WorldToClip.TransformFVector4(Line.Start);
                         FVector4 EndClip = WorldToClip.TransformFVector4(Line.End);
 
-                        const float ScalingStart = Section->bScreenSpace ? StartW / ViewportSizeX : 1.0;
-                        const float ScalingEnd = Section->bScreenSpace ? EndW / ViewportSizeX : 1.0;
+                        //const float ScalingStart = Section->bScreenSpace ? StartW / ViewportSizeX : 1.0;
+                        //const float ScalingEnd = Section->bScreenSpace ? EndW / ViewportSizeX : 1.0;
 
-                        const float CurrentOrthoZoomFactor = Section->bScreenSpace ? OrthoZoomFactor : 1.0;
-                        const float ScreenSpaceScaling = Section->bScreenSpace ? 2.0 : 1.0;
+                        //const float CurrentOrthoZoomFactor = Section->bScreenSpace ? OrthoZoomFactor : 1.0;
+                        //const float ScreenSpaceScaling = Section->bScreenSpace ? 2.0 : 1.0;
 
-                        const float StartThickness = Thickness * ScreenSpaceScaling * CurrentOrthoZoomFactor * ScalingStart;
-                        const float EndThickness = Thickness * ScreenSpaceScaling * CurrentOrthoZoomFactor * ScalingEnd;
+                        const float StartThickness = Thickness;// * ScreenSpaceScaling * CurrentOrthoZoomFactor* ScalingStart;
+                        const float EndThickness = Thickness;// * ScreenSpaceScaling * CurrentOrthoZoomFactor* ScalingEnd;
 
                         const FVector WorldPointXS = CameraX * StartThickness * 0.5f;
                         const FVector WorldPointYS = CameraY * StartThickness * 0.5f;
