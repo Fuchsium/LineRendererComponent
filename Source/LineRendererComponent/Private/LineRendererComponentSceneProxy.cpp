@@ -234,6 +234,10 @@ void FLineRendererComponentSceneProxy::GetDynamicMeshElements(const TArray<const
     {
         TSharedPtr<FLineProxySection> Section = KeyValueIter.Value;
 
+        if(Section->Lines.Num() <= 0) {
+            continue;
+        }
+
         if (Section.IsValid() && Section->bInitialized && Section->bSectionVisible)
         {
             FMaterialRenderProxy* MaterialProxy = Section->Material->GetRenderProxy();
