@@ -59,6 +59,10 @@ public:
     virtual void InitRHI() override
 #endif
     {
+        if(NumVertices <= 0) {
+            return;
+        }
+
         // create dynamic buffer
 
         // FRHIResourceCreateInfo CreateInfo(TEXT("ThickLines"), VertexData->GetResourceArray());
