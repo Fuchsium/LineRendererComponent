@@ -37,6 +37,10 @@ void ULineRendererComponent::CreateLine2Points(int32 SectionIndex, const FVector
 
 void ULineRendererComponent::CreateLine(int32 SectionIndex, const TArray<FVector>& Vertices, const FLinearColor& Color, float Thickness, bool bScreenSpace)
 {
+    if(Vertices.Num() <= 1) {
+        return;
+    }
+
     FLineSectionInfo Section;
 
     FLineSectionInfo* NewSection = &Section;
